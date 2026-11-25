@@ -1,0 +1,193 @@
+/* Hallmark · shape: Long Document · genre: editorial · theme: Atelier (deal 2/3, seed microsoft-365-security-audit-c31c·0635855a·2026-11-24·r0) · redesign: full · draw: b41411
+ * hero: Poster · nav: edge-aligned · footer: letter close · imagery: none · signature: cotton-stock audit dossier specimen on the first screen
+ * axes: light/roman-serif/cool · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/spectral-400.woff2') format('woff2');}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/spectral-500.woff2') format('woff2');}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/spectral-600.woff2') format('woff2');}
+@font-face{font-family:'Fira Sans';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/fira-sans-400.woff2') format('woff2');}
+@font-face{font-family:'Fira Sans';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/fira-sans-500.woff2') format('woff2');}
+@font-face{font-family:'Fira Sans';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/fira-sans-600.woff2') format('woff2');}
+
+:root{
+  color-scheme:light;
+  --titres:'Spectral',Georgia,serif;
+  --texte:'Fira Sans','Segoe UI',system-ui,sans-serif;
+  --encre:#231A14;
+  --texteDoux:#514740;
+  --marine:#2C4157;
+  --accent:#3A5470;
+  --papier:#FAF8F4;
+  --ivoire:#EFECE6;
+  --surface:#E7E2DA;
+  --filet:#CDC6BC;
+  --sur-encre:#FAF8F4;
+  --papier-clair:#FBF9F6;
+  --papier-ombre:#F3EFE8;
+  --carte-bord:#D6D0C6;
+  --bord-champ:#857B72;
+  --focus:#3A5470;
+  --ombre-carte:0 0 0 1px rgba(35,26,20,.05),0.5px 1px 1px rgba(35,26,20,.08),3px 8px 14px -6px rgba(35,26,20,.14),14px 36px 64px -28px rgba(35,26,20,.24);
+  --rayon-carte:2px;
+  --rayon-bouton:3px;
+  --duree-courte:200ms;
+  --courbe:cubic-bezier(0.16,1,0.3,1);
+  --etat-oui:#275D44;
+  --etat-partiel:#7C5009;
+  --etat-non:#913124;
+  --etat-nonverifie:#4E5666;
+  --etat-aconfirmer:#2C4157;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;background:var(--ivoire);color:var(--texteDoux);font:400 16px/1.6 var(--texte);font-variant-numeric:lining-nums;-webkit-font-smoothing:antialiased;caret-color:var(--accent)}
+a{color:var(--encre);text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--accent)}
+a:hover{color:var(--accent)}
+a:active{opacity:.8}
+:focus-visible{outline:2px solid var(--focus);outline-offset:4px;border-radius:2px}
+.conteneur{max-width:1120px;margin:0 auto;padding:0 32px}
+.saut{position:absolute;left:-9999px}
+.saut:focus{left:16px;top:12px;z-index:50;background:var(--papier);color:var(--encre);padding:8px 16px;border:1px solid var(--encre)}
+h1,h2,h3{font-family:var(--titres);font-weight:400;color:var(--encre);line-height:1.08;letter-spacing:-.018em;margin:0;overflow-wrap:break-word;min-width:0;text-wrap:balance}
+h1{font-size:clamp(40px,5.2vw,68px);max-width:16ch}
+h2{font-size:clamp(30px,3.2vw,44px);max-width:24ch}
+h3{font-size:24px;line-height:1.2}
+p{margin:0;text-wrap:pretty}
+
+/* Surface coton Atelier */
+.carte-coton{position:relative;border-radius:var(--rayon-carte);background:linear-gradient(160deg,var(--papier-clair),var(--papier) 56%,var(--papier-ombre));box-shadow:var(--ombre-carte)}
+.carte-coton::before{content:"";position:absolute;inset:12px;border:1px solid var(--carte-bord);pointer-events:none}
+
+/* En-tête : edge-aligned, solide */
+.haut{position:sticky;top:0;z-index:20;background:var(--ivoire);border-bottom:1px solid var(--filet)}
+.haut .conteneur{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:68px;flex-wrap:wrap}
+.marque{display:inline-flex;align-items:center;gap:12px;font-family:var(--titres);font-weight:500;font-size:20px;color:var(--encre);text-decoration:none;letter-spacing:-.01em}
+.marque-sceau{width:30px;height:30px;flex-shrink:0;display:block}
+nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;flex-wrap:wrap}
+nav a{color:var(--texteDoux);text-decoration:none;font-size:15px;padding:8px 0;border-bottom:1px solid transparent;transition:color var(--duree-courte) var(--courbe),border-color var(--duree-courte) var(--courbe)}
+nav a:hover{color:var(--encre);border-bottom-color:var(--accent)}
+
+/* Hero : Poster + spécimen de dossier sur coton */
+.promesse{padding:64px 0 72px;border-bottom:1px solid var(--filet)}
+.hero-grille{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.95fr);gap:32px;align-items:start}
+.lieu{font-size:14px;color:var(--texteDoux);margin:0 0 20px}
+.promesse .sous{font-size:19px;line-height:1.5;color:var(--texteDoux);max-width:44ch;margin:20px 0 32px}
+.boutons{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.bouton{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:var(--rayon-bouton);font:400 15px var(--texte);text-decoration:none;border:1px solid var(--encre);background:transparent;color:var(--encre);cursor:pointer;transition:background-color var(--duree-courte) var(--courbe),color var(--duree-courte) var(--courbe)}
+.bouton:hover{background:var(--encre);color:var(--sur-encre)}
+.bouton:active{transform:translateY(1px)}
+.bouton:disabled{opacity:.45;cursor:not-allowed}
+.lien-secondaire{font-size:15px;color:var(--encre);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px;padding:8px 0}
+
+/* Spécimen coton : la signature sur le premier écran */
+.specimen{padding:32px}
+.specimen-tete{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--encre);margin-bottom:16px;font-size:14px;color:var(--texteDoux)}
+.specimen-tete strong{font-family:var(--titres);font-weight:500;font-size:17px;color:var(--encre)}
+.garanties{list-style:none;padding:0;margin:0}
+.garanties li{padding:16px 0;border-bottom:1px solid var(--filet)}
+.garanties li:last-child{border-bottom:0;padding-bottom:0}
+.garanties strong{display:block;font-family:var(--titres);font-weight:500;font-size:19px;color:var(--encre);margin-bottom:4px}
+.garanties span{display:block;font-size:15px;color:var(--texteDoux)}
+
+/* Sections : rythme Long Document */
+section{padding:80px 0}
+section+section{border-top:1px solid var(--filet)}
+.section-tete{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:end;margin-bottom:48px}
+.intro{color:var(--texteDoux);max-width:54ch;font-size:17px}
+.intro-contact{margin-top:16px}
+.page-interne{padding:72px 0}
+.titre-page{margin-bottom:24px;max-width:22ch}
+.retour-accueil{margin-top:32px}
+
+/* Offres : Index réglé Atelier */
+.offres-index{border-top:1px solid var(--encre)}
+.offre-ligne{display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,1.4fr);gap:24px 32px;padding:32px 0;border-bottom:1px solid var(--filet);align-items:start}
+.offre-num{font-family:var(--titres);font-size:20px;color:var(--texteDoux);font-variant-numeric:tabular-nums;padding-top:4px}
+.offre-meta h3{font-size:26px;margin-bottom:8px}
+.offre-mention{display:inline-block;font-size:13px;color:var(--accent);margin-bottom:8px}
+.prix{font-family:var(--titres);font-size:36px;font-weight:400;color:var(--encre);line-height:1.1;margin:8px 0 4px;font-variant-numeric:tabular-nums}
+.prix small{font-family:var(--texte);font-size:14px;color:var(--texteDoux)}
+.taxes{font-size:14px;color:var(--texteDoux);margin:0 0 12px}
+.offre-pour{font-size:14px;color:var(--texteDoux);padding-top:12px;border-top:1px solid var(--filet);margin-top:16px}
+.offre-detail ul{margin:0;padding:0;list-style:none}
+.offre-detail li{position:relative;padding:0 0 12px 20px;font-size:15px;color:var(--texteDoux)}
+.offre-detail li:last-child{padding-bottom:0}
+.offre-detail li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:1px;background:var(--accent)}
+.note{color:var(--texteDoux);font-size:14px;margin-top:24px;max-width:68ch}
+
+/* Déroulement : table horaire réglée Atelier */
+.etapes{list-style:none;margin:0;padding:0;counter-reset:etape;border-top:1px solid var(--encre)}
+.etapes li{counter-increment:etape;display:grid;grid-template-columns:56px minmax(0,.85fr) minmax(0,1.4fr);gap:16px 32px;padding:24px 0;border-bottom:1px solid var(--filet);align-items:baseline}
+.etapes li::before{content:"0" counter(etape);font-family:var(--titres);font-size:18px;color:var(--accent);font-variant-numeric:tabular-nums}
+.etapes h3{font-size:21px}
+.etapes p{font-size:15px;color:var(--texteDoux);max-width:60ch}
+.engagements{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:40px;padding-top:24px;border-top:1px solid var(--filet)}
+.engagement strong{display:block;font-family:var(--titres);font-weight:500;font-size:19px;color:var(--encre);margin-bottom:4px}
+.engagement span{font-size:15px;color:var(--texteDoux)}
+
+/* À propos : récit + lettrine ardoise + fiche coton */
+.a-propos{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.95fr);gap:32px;align-items:start}
+.a-propos-texte p{margin-top:20px;max-width:58ch;font-size:16px}
+.lettrine::first-letter{float:left;font-family:var(--titres);font-weight:400;font-size:52px;line-height:.84;padding:4px 12px 0 0;color:var(--accent)}
+.fiche{padding:32px}
+.fiche dl{margin:0;border-top:1px solid var(--encre)}
+.fiche-rang{display:grid;grid-template-columns:128px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--filet)}
+.fiche dt{color:var(--texteDoux);font-size:14px}
+.fiche dd{margin:0;font-size:15px;color:var(--encre)}
+.portrait-bloc{display:flex;align-items:center;gap:16px;padding-bottom:20px;margin-bottom:4px}
+.portrait-photo{width:72px;height:72px;border-radius:var(--rayon-carte);object-fit:cover;display:block;flex-shrink:0}
+.portrait-identite strong{display:block;font-family:var(--titres);font-weight:500;font-size:20px;color:var(--encre)}
+.portrait-identite span{display:block;font-size:14px;color:var(--texteDoux)}
+.exemple-rapport{margin-top:32px;padding:28px 32px}
+.exemple-rapport h3{font-size:22px;margin-bottom:8px}
+.exemple-rapport p{font-size:15px;color:var(--texteDoux);margin-top:8px;max-width:56ch}
+.exemple-rapport .exemple-action{margin-top:16px;font-size:14px;color:var(--encre)}
+
+/* Contact : carte lettre sur coton */
+.contact-grille{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:32px;align-items:start}
+form.carte-coton{padding:36px}
+.champs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.champ{display:flex;flex-direction:column;gap:8px}
+.champ-large{grid-column:1 / -1}
+label{font-size:14px;color:var(--encre)}
+input,select{font:inherit;font-size:16px;color:var(--encre);background:transparent;border:0;border-bottom:1px solid var(--bord-champ);border-radius:0;padding:8px 4px;width:100%}
+input:hover,select:hover{border-bottom-color:var(--encre)}
+input:disabled,select:disabled{opacity:.5;cursor:not-allowed}
+.aide{color:var(--texteDoux);font-size:14px;margin-top:24px}
+.action-form{margin-top:24px}
+.message{margin-top:12px;font-size:15px;min-height:24px}
+.message.succes{color:var(--etat-oui)}
+.message.erreur{color:var(--etat-non)}
+.champ-pot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* Renseignements personnels */
+.confidentialite-liste{list-style:none;padding:0;margin:32px 0 0;border-top:1px solid var(--encre);max-width:74ch}
+.confidentialite-liste li{padding:16px 0;border-bottom:1px solid var(--filet);font-size:15px}
+
+/* Pied de page : letter close */
+footer{border-top:1px solid var(--encre);padding:40px 0 56px;color:var(--texteDoux);font-size:14px}
+footer .conteneur{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:start}
+.pied-droit{text-align:right}
+footer p+p{margin-top:4px}
+
+@media (max-width:900px){
+  .hero-grille,.section-tete,.a-propos,.contact-grille{grid-template-columns:1fr;gap:32px}
+  .offre-ligne{grid-template-columns:1fr;gap:16px}
+  .etapes li{grid-template-columns:40px minmax(0,1fr);gap:8px 16px}
+  .etapes p{grid-column:2}
+  .engagements{grid-template-columns:1fr}
+  footer .conteneur{grid-template-columns:1fr}
+  .pied-droit{text-align:left}
+}
+@media (max-width:600px){
+  .conteneur{padding:0 20px}
+  .promesse{padding:40px 0 48px}
+  section,.page-interne{padding:56px 0}
+  .champs{grid-template-columns:1fr}
+  .fiche-rang{grid-template-columns:1fr;gap:4px}
+  nav{width:100%}
+  nav ul{gap:16px;padding-bottom:12px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+@media print{.haut,.boutons,#contact form{display:none}section{break-inside:avoid;padding:24px 0}}
