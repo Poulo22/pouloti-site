@@ -105,9 +105,9 @@ section+section{border-top:1px solid var(--filet)}
 .engagement strong{display:block;font-family:var(--titres);font-weight:500;font-size:19px;color:var(--encre);margin-bottom:4px}
 .engagement span{font-size:15px;color:var(--texteDoux)}
 
-/* Qui je suis : récit + lettrine ardoise + fiche coton */
-.qui{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.95fr);gap:32px;align-items:start}
-.qui-texte p{margin-top:20px;max-width:58ch;font-size:16px}
+/* À propos : récit + lettrine ardoise + fiche coton */
+.a-propos{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.95fr);gap:32px;align-items:start}
+.a-propos-texte p{margin-top:20px;max-width:58ch;font-size:16px}
 .lettrine::first-letter{float:left;font-family:var(--titres);font-weight:400;font-size:52px;line-height:.84;padding:4px 12px 0 0;color:var(--accent)}
 .fiche{padding:32px}
 .fiche dl{margin:0;border-top:1px solid var(--encre)}
@@ -142,7 +142,7 @@ footer .conteneur{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)
 footer p+p{margin-top:4px}
 
 @media (max-width:900px){
-  .hero-grille,.section-tete,.qui,.contact-grille{grid-template-columns:1fr;gap:32px}
+  .hero-grille,.section-tete,.a-propos,.contact-grille{grid-template-columns:1fr;gap:32px}
   .offre-ligne{grid-template-columns:1fr;gap:16px}
   .etapes li{grid-template-columns:40px minmax(0,1fr);gap:8px 16px}
   .etapes p{grid-column:2}
@@ -182,7 +182,7 @@ footer p+p{margin-top:4px}
         <li><a href="#offres">Forfaits sécurité</a></li>
         <li><a href="#services-ti">Services TI</a></li>
         <li><a href="#deroulement">Démarche</a></li>
-        <li><a href="#qui">Le cabinet</a></li>
+        <li><a href="#a-propos">À propos</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -200,7 +200,7 @@ footer p+p{margin-top:4px}
         <p class="sous">Du diagnostic de sécurité à prix fixe (Loi 25 et cyberassurance) jusqu’au durcissement Microsoft 365, à la gestion des postes Windows avec Intune et à l’automatisation.</p>
         <div class="boutons">
           <a class="bouton" href="#contact">Demander un Audit Flash</a>
-          <a class="lien-secondaire" href="#services-ti">Voir mes services Microsoft 365 et Intune</a>
+          <a class="lien-secondaire" href="#services-ti">Découvrir mes services</a>
         </div>
       </div>
       <aside class="specimen carte-coton" aria-label="Engagements">
@@ -222,7 +222,7 @@ footer p+p{margin-top:4px}
     <div class="conteneur">
       <div class="section-tete">
         <h2 id="titre-offres">Trois offres, trois prix</h2>
-        <p class="intro">On commence toujours par l’Audit Flash : il dit précisément où vous en êtes. Le reste n’est proposé que si l’audit montre qu’il est utile.</p>
+        <p class="intro">Je commence toujours par l’Audit Flash : il dit précisément où vous en êtes. Je ne propose la suite que si l’audit montre qu’elle est utile.</p>
       </div>
       <div class="offres-index">
 
@@ -341,25 +341,25 @@ footer p+p{margin-top:4px}
         <p class="intro">Vous gardez le contrôle du début à la fin. Rien n’est modifié dans votre environnement pendant l’audit.</p>
       </div>
       <ol class="etapes">
-        <li><h3>Un mandat écrit</h3><p>Nous signons une lettre de mandat qui précise ce qui est vérifié, le prix, et la durée de conservation des données. Rien ne commence sans elle.</p></li>
-        <li><h3>Un compte d’audit dédié, en lecture seule</h3><p>Un compte réservé à l’audit est créé dans votre Microsoft 365, avec des droits de lecture seulement. Il ne peut rien modifier, rien supprimer, rien envoyer.</p></li>
-        <li><h3>La collecte</h3><p>Les vérifications sont faites à distance, sans installer de logiciel sur vos postes et sans interrompre le travail de vos équipes. Durée : environ 2 heures.</p></li>
-        <li><h3>La remise du rapport</h3><p>Le rapport est présenté à la direction en personne ou en visioconférence. Les fichiers sont remis par un lien de partage chiffré qui expire : jamais par courriel.</p></li>
-        <li><h3>La fermeture</h3><p>Le compte d’audit est supprimé à la fin du mandat et l’accès accordé à l’outil d’audit est retiré. Les données recueillies sont supprimées après 30 jours suivant la remise finale.</p></li>
+        <li><h3>Un mandat écrit</h3><p>Je vous soumets une lettre de mandat qui précise ce qui est vérifié, le prix et la durée de conservation des données. Rien ne commence sans votre accord signé.</p></li>
+        <li><h3>Un compte d’audit dédié, en lecture seule</h3><p>Vous créez un compte réservé à l’audit dans votre Microsoft 365, avec des droits de lecture seulement. Je ne peux rien modifier, rien supprimer, rien envoyer.</p></li>
+        <li><h3>La collecte</h3><p>J’effectue les vérifications à distance, sans installer de logiciel sur vos postes et sans interrompre le travail de vos équipes. Durée : environ 2 heures.</p></li>
+        <li><h3>La remise du rapport</h3><p>Je présente le rapport à la direction en personne ou en visioconférence, et je remets les fichiers par un lien de partage chiffré qui expire : jamais par courriel.</p></li>
+        <li><h3>La fermeture</h3><p>Vous supprimez le compte d’audit à la fin du mandat et retirez l’accès accordé à l’outil d’audit. Je supprime les données recueillies après 30 jours suivant la remise finale.</p></li>
       </ol>
       <div class="engagements">
         <div class="engagement"><strong>Lecture seule</strong><span>Aucune modification pendant l’audit.</span></div>
         <div class="engagement"><strong>Compte supprimé à la fin</strong><span>L’accès disparaît avec le mandat.</span></div>
-        <div class="engagement"><strong>Rien par courriel</strong><span>Les données de votre cabinet ne transitent jamais par une boîte courriel.</span></div>
+        <div class="engagement"><strong>Rien par courriel</strong><span>Les données de votre organisation ne transitent jamais par une boîte courriel.</span></div>
       </div>
     </div>
   </section>
 
-  <!-- Qui je suis -->
-  <section id="qui" aria-labelledby="titre-qui">
-    <div class="conteneur qui">
-      <div class="qui-texte">
-        <h2 id="titre-qui">Qui je suis</h2>
+  <!-- À propos -->
+  <section id="a-propos" aria-labelledby="titre-a-propos">
+    <div class="conteneur a-propos">
+      <div class="a-propos-texte">
+        <h2 id="titre-a-propos">À propos</h2>
         <p class="lettrine">Daouda Sow. Spécialisé en sécurité Microsoft 365, gestion des postes Windows avec Intune et automatisation PowerShell, j’accompagne les PME et les cabinets professionnels dans la sécurisation de leurs accès, de leur messagerie et de leurs appareils.</p>
         <p>Les organisations de 10 à 75 employés doivent aujourd’hui répondre aux exigences de la Loi 25 et des questionnaires de cyberassurance tout en gardant un parc Windows propre et conforme, souvent sans disposer d’un spécialiste Microsoft 365 à l’interne.</p>
         <p>Ma façon de travailler est directe : un seul interlocuteur, du diagnostic à la mise en œuvre, des preuves vérifiables sans jargon inutile, et un tarif convenu d’avance.</p>
