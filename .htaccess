@@ -1,0 +1,20 @@
+# Redirection automatique HTTP -> HTTPS et www -> pouloti.com (OVHcloud Apache)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} ^www\.pouloti\.com$ [NC]
+    RewriteRule ^ https://pouloti.com%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# En-têtes de sécurité HTTP (bonnes pratiques cabinet de cybersécurité)
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# Encodage UTF-8 par défaut
+AddDefaultCharset UTF-8
+DirectoryIndex index.html
