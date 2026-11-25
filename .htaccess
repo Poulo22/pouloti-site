@@ -15,6 +15,7 @@
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
 
-# Encodage UTF-8 par défaut
+# Encodage UTF-8 par défaut et page 404 personnalisée
 AddDefaultCharset UTF-8
 DirectoryIndex index.html
+ErrorDocument 404 /404.html

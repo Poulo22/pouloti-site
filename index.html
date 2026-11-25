@@ -9,11 +9,11 @@
 <meta name="theme-color" content="#2C4157">
 <!-- Aucune ressource d'un autre site : polices et icônes locales, pas de script externe, pas de traceur. -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'none'">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preload" href="fonts/spectral-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/fira-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/spectral-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fira-sans-400.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* Hallmark · shape: Long Document · genre: editorial · theme: Atelier (deal 2/3, seed microsoft-365-security-audit-c31c·0635855a·2026-11-24·r0) · redesign: full · draw: b41411
  * hero: Poster · nav: edge-aligned · footer: letter close · imagery: none · signature: cotton-stock audit dossier specimen on the first screen
@@ -176,7 +176,7 @@ footer p+p{margin-top:4px}
 
 <header class="haut">
   <div class="conteneur">
-    <a class="marque" href="#">
+    <a class="marque" href="/">
       <svg class="marque-sceau" viewBox="0 0 64 64" aria-hidden="true">
         <rect x="2" y="2" width="60" height="60" rx="10" fill="var(--marine)"/>
         <rect x="7" y="7" width="50" height="50" rx="6" fill="none" stroke="var(--papier)" stroke-width="1.25" stroke-opacity="0.38"/>
@@ -456,7 +456,7 @@ footer p+p{margin-top:4px}
             </select>
           </div>
         </div>
-        <p class="aide">N’incluez aucune information sur vos clients ni aucun détail de configuration TI.</p>
+        <p class="aide">N’incluez aucune information sur vos clients ni aucun détail de configuration TI. Consultez ma <a href="/confidentialite.html">politique de confidentialité</a>.</p>
         <p class="action-form"><button class="bouton" id="bouton-envoi" type="submit">Envoyer ma demande</button></p>
         <p class="message" id="message" role="status" aria-live="polite"></p>
       </form>
@@ -487,7 +487,7 @@ footer p+p{margin-top:4px}
     </div>
     <div class="pied-droit">
       <p>Cybersécurité Microsoft 365, Intune et automatisation</p>
-      <p>Pas un avis juridique</p>
+      <p><a href="/confidentialite.html">Confidentialité</a> · Pas un avis juridique</p>
     </div>
   </div>
 </footer>
