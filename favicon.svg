@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Poulo TI">
+  <!-- Fond ardoise profonde Atelier (#2C4157) -->
+  <rect x="2" y="2" width="60" height="60" rx="10" fill="#2C4157"/>
+  <!-- Filet intérieur papier coton (#FAF8F4) façon sceau d'atelier -->
+  <rect x="7" y="7" width="50" height="50" rx="6" fill="none" stroke="#FAF8F4" stroke-width="1.25" stroke-opacity="0.38"/>
+  <!-- Écu discret de sécurité en filigrane -->
+  <path d="M32 13 L47 18.5 V31.5 C47 41.2 40.6 48.8 32 52 C23.4 48.8 17 41.2 17 31.5 V18.5 Z" fill="#3A5470" fill-opacity="0.45" stroke="#FAF8F4" stroke-width="1.2" stroke-opacity="0.55"/>
+  <!-- Monogramme P sérif éditorial en papier coton (#FAF8F4) -->
+  <path d="M23.5 21 H34.2 C38.8 21 41.8 23.5 41.8 27.6 C41.8 31.8 38.6 34.4 33.8 34.4 H28.8 V42.5 H31.6 V44.5 H22.5 V42.5 H24.8 V23 H22.5 V21 Z M28.8 23.3 V32.1 H33.3 C36.3 32.1 37.8 30.5 37.8 27.6 C37.8 24.8 36.3 23.3 33.4 23.3 Z" fill="#FAF8F4"/>
+</svg>
