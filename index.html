@@ -8,7 +8,7 @@
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#2C4157">
 <!-- Aucune ressource d'un autre site : polices et icônes locales, pas de script externe, pas de traceur. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; font-src 'self'; img-src 'self' data:; form-action mailto:; base-uri 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'none'">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -127,7 +127,9 @@ input:disabled,select:disabled{opacity:.5;cursor:not-allowed}
 .aide{color:var(--texteDoux);font-size:14px;margin-top:24px}
 .action-form{margin-top:24px}
 .message{margin-top:12px;font-size:15px;min-height:24px}
+.message.succes{color:var(--etat-oui)}
 .message.erreur{color:var(--etat-non)}
+.champ-pot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
 /* Renseignements personnels */
 .confidentialite-liste{list-style:none;padding:0;margin:32px 0 0;border-top:1px solid var(--encre);max-width:74ch}
@@ -377,19 +379,23 @@ footer p+p{margin-top:4px}
   <section id="contact" aria-labelledby="titre-contact">
     <div class="conteneur contact-grille">
       <div>
-        <h2 id="titre-contact">Parler d’un projet TI ou demander un Audit Flash</h2>
-        <p class="intro" style="margin-top:16px">Remplissez ces champs : votre logiciel de courriel s’ouvre avec un message prêt à envoyer. Rien n’est transmis par ce site.</p>
+        <h2 id="titre-contact">Parler d’un besoin ou demander un Audit Flash</h2>
+        <p class="intro" style="margin-top:16px">Remplissez ces champs pour m’envoyer directement votre demande. Je vous réponds personnellement sous 1 jour ouvrable.</p>
       </div>
-      <!-- Remplacer daouda.sow@pouloti.com dans data-destinataire ET dans action par votre vraie adresse. -->
-      <form class="carte-coton" id="formulaire" action="mailto:daouda.sow@pouloti.com" method="post" enctype="text/plain" data-destinataire="daouda.sow@pouloti.com">
+      <!-- À FOURNIR : identifiant Formspree (remplacer VOTRE_ID_FORMSPREE dans action par l'ID de votre formulaire sur formspree.io relié à daouda.sow@pouloti.com) -->
+      <form class="carte-coton" id="formulaire" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+        <div class="champ-pot" aria-hidden="true">
+          <label for="site_web">Ne pas remplir ce champ</label>
+          <input id="site_web" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+        </div>
         <div class="champs">
           <div class="champ">
             <label for="nom">Nom</label>
             <input id="nom" name="Nom" type="text" autocomplete="name" required>
           </div>
           <div class="champ">
-            <label for="cabinet">Organisation / Cabinet</label>
-            <input id="cabinet" name="Cabinet" type="text" autocomplete="organization" required>
+            <label for="organisation">Organisation</label>
+            <input id="organisation" name="Organisation" type="text" autocomplete="organization" required>
           </div>
           <div class="champ">
             <label for="courriel">Courriel</label>
@@ -416,8 +422,8 @@ footer p+p{margin-top:4px}
             </select>
           </div>
         </div>
-        <p class="aide">N’inscrivez aucun renseignement sur vos clients ni sur votre configuration informatique dans ce message.</p>
-        <p class="action-form"><button class="bouton" type="submit">Préparer mon courriel</button></p>
+        <p class="aide">N’incluez aucune information sur vos clients ni aucun détail de configuration TI.</p>
+        <p class="action-form"><button class="bouton" id="bouton-envoi" type="submit">Envoyer ma demande</button></p>
         <p class="message" id="message" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -428,11 +434,11 @@ footer p+p{margin-top:4px}
     <div class="conteneur">
       <h2 id="titre-confidentialite">Protection des renseignements personnels</h2>
       <ul class="confidentialite-liste">
-        <li>Ce site ne dépose aucun témoin (cookie), n’utilise aucun outil de mesure d’audience ni aucun traceur, et ne charge aucune ressource d’un autre site.</li>
-        <li>Le formulaire n’envoie rien à un serveur : il prépare un courriel dans votre propre logiciel de courriel. Vous décidez de l’envoyer ou non.</li>
-        <li>Les renseignements que vous m’envoyez (nom, cabinet, courriel, nombre d’employés) servent uniquement à répondre à votre demande. Ils ne sont ni vendus, ni partagés, ni utilisés pour de la prospection sans votre accord.</li>
+        <li>Ce site ne dépose aucun témoin (cookie), n’utilise aucun outil de mesure d’audience ni aucun traceur, et héberge localement ses polices et ses icônes.</li>
+        <li>L’envoi du formulaire de contact est traité par le service <strong>Formspree</strong> (Formspree, Inc., dont les serveurs sont situés aux <strong>États-Unis</strong>) afin d’acheminer votre message vers ma boîte courriel. Conformément à la Loi 25, l’utilisation de ce formulaire implique que les renseignements saisis sont communiqués hors du Québec (aux États-Unis) pour cette seule fin. Si vous préférez éviter ce transit, écrivez-moi directement à <a href="mailto:daouda.sow@pouloti.com">daouda.sow@pouloti.com</a>.</li>
+        <li>Les renseignements que vous me transmettez (nom, organisation, courriel, nombre d’employés et besoin principal) servent uniquement à répondre à votre demande. Ils ne sont ni vendus, ni loués, ni utilisés pour de la prospection sans votre accord.</li>
         <li>Ils sont conservés le temps de traiter votre demande (maximum 12 mois), puis supprimés.</li>
-        <li>Responsable de la protection des renseignements personnels : Daouda Sow, daouda.sow@pouloti.com. Vous pouvez demander l’accès à vos renseignements, leur rectification ou leur suppression.</li>
+        <li>Responsable de la protection des renseignements personnels : Daouda Sow (<a href="mailto:daouda.sow@pouloti.com">daouda.sow@pouloti.com</a>). Vous pouvez demander l’accès à vos renseignements, leur rectification ou leur suppression en tout temps.</li>
       </ul>
     </div>
   </section>
@@ -453,42 +459,72 @@ footer p+p{margin-top:4px}
 </footer>
 
 <script>
-  // Prépare un courriel (mailto:) dans le logiciel du visiteur. Aucune donnée n'est envoyée par le site.
   (function () {
     var form = document.getElementById('formulaire');
     var message = document.getElementById('message');
+    var bouton = document.getElementById('bouton-envoi');
+    if (!form || !message) return;
     form.noValidate = true;
+
+    function afficherErreurEnvoi() {
+      message.className = 'message erreur';
+      message.textContent = '';
+      message.appendChild(document.createTextNode('L’envoi a échoué. Écrivez-moi directement à '));
+      var lien = document.createElement('a');
+      lien.href = 'mailto:daouda.sow@pouloti.com';
+      lien.textContent = 'daouda.sow@pouloti.com';
+      message.appendChild(lien);
+      message.appendChild(document.createTextNode('.'));
+    }
+
     form.addEventListener('submit', function (evt) {
       evt.preventDefault();
       message.className = 'message';
-      var destinataire = (form.getAttribute('data-destinataire') || '').trim();
-      if (!/^[^\s@\[\]]+@[^\s@\[\]]+\.[^\s@\[\]]+$/.test(destinataire)) {
+      message.textContent = '';
+
+      var pot = document.getElementById('site_web');
+      if (pot && pot.value.trim() !== '') {
         message.className = 'message erreur';
-        message.textContent = "L'adresse du destinataire n'est pas encore configurée sur ce site.";
+        message.textContent = 'Envoi refusé par le filtre anti-pourriel.';
         return;
       }
-      var champs = ['nom', 'cabinet', 'courriel', 'employes'];
+
+      var champs = ['nom', 'organisation', 'courriel', 'employes'];
       for (var i = 0; i < champs.length; i++) {
         var el = document.getElementById(champs[i]);
-        if (!el.value.trim() || (el.type === 'email' && !el.checkValidity())) {
+        if (!el || !el.value.trim() || (el.type === 'email' && !el.checkValidity())) {
           message.className = 'message erreur';
-          message.textContent = 'Veuillez remplir le champ « ' + document.querySelector('label[for="' + champs[i] + '"]').textContent + ' ».';
-          el.focus();
+          var etiquette = document.querySelector('label[for="' + champs[i] + '"]');
+          message.textContent = 'Veuillez remplir le champ « ' + (etiquette ? etiquette.textContent : champs[i]) + ' ».';
+          if (el) el.focus();
           return;
         }
       }
-      var v = function (id) { var e = document.getElementById(id); return e ? e.value.trim() : ''; };
-      var besoin = v('besoin') || 'Audit Flash / Services TI';
-      var sujet = besoin + ' : ' + v('cabinet');
-      var corps = 'Bonjour,\n\nJe souhaite échanger au sujet de nos besoins TI.\n\n'
-        + 'Besoin principal : ' + besoin + '\n'
-        + 'Nom : ' + v('nom') + '\n'
-        + 'Organisation : ' + v('cabinet') + '\n'
-        + 'Courriel : ' + v('courriel') + '\n'
-        + 'Nombre d\'employés : ' + v('employes') + '\n';
-      window.location.href = 'mailto:' + destinataire
-        + '?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(corps);
-      message.textContent = 'Votre logiciel de courriel devrait s\'ouvrir avec le message prêt à envoyer.';
+
+      var urlAction = (form.getAttribute('action') || '').trim();
+      if (!urlAction || urlAction.indexOf('VOTRE_ID_FORMSPREE') !== -1) {
+        afficherErreurEnvoi();
+        return;
+      }
+
+      if (bouton) bouton.disabled = true;
+      fetch(urlAction, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (reponse) {
+        if (bouton) bouton.disabled = false;
+        if (reponse.ok) {
+          form.reset();
+          message.className = 'message succes';
+          message.textContent = 'Merci, je vous réponds sous 1 jour ouvrable.';
+        } else {
+          afficherErreurEnvoi();
+        }
+      }).catch(function () {
+        if (bouton) bouton.disabled = false;
+        afficherErreurEnvoi();
+      });
     });
   })();
 </script>
