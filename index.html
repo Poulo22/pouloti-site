@@ -114,6 +114,14 @@ section+section{border-top:1px solid var(--filet)}
 .fiche-rang{display:grid;grid-template-columns:128px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--filet)}
 .fiche dt{color:var(--texteDoux);font-size:14px}
 .fiche dd{margin:0;font-size:15px;color:var(--encre)}
+.portrait-bloc{display:flex;align-items:center;gap:16px;padding-bottom:20px;margin-bottom:4px}
+.portrait-photo{width:72px;height:72px;border-radius:var(--rayon-carte);object-fit:cover;display:block;flex-shrink:0}
+.portrait-identite strong{display:block;font-family:var(--titres);font-weight:500;font-size:20px;color:var(--encre)}
+.portrait-identite span{display:block;font-size:14px;color:var(--texteDoux)}
+.exemple-rapport{margin-top:32px;padding:28px 32px}
+.exemple-rapport h3{font-size:22px;margin-bottom:8px}
+.exemple-rapport p{font-size:15px;color:var(--texteDoux);margin-top:8px;max-width:56ch}
+.exemple-rapport .exemple-action{margin-top:16px;font-size:14px;color:var(--encre)}
 
 /* Contact : carte lettre sur coton */
 .contact-grille{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:32px;align-items:start}
@@ -363,13 +371,38 @@ footer p+p{margin-top:4px}
         <p class="lettrine">Daouda Sow. Spécialisé en sécurité Microsoft 365, gestion des postes Windows avec Intune et automatisation PowerShell, j’accompagne les PME et les cabinets professionnels dans la sécurisation de leurs accès, de leur messagerie et de leurs appareils.</p>
         <p>Les organisations de 10 à 75 employés doivent aujourd’hui répondre aux exigences de la Loi 25 et des questionnaires de cyberassurance tout en gardant un parc Windows propre et conforme, souvent sans disposer d’un spécialiste Microsoft 365 à l’interne.</p>
         <p>Ma façon de travailler est directe : un seul interlocuteur, du diagnostic à la mise en œuvre, des preuves vérifiables sans jargon inutile, et un tarif convenu d’avance.</p>
+
+        <div class="exemple-rapport carte-coton">
+          <h3>Exemple de rapport</h3>
+          <p>Consultez un aperçu anonymisé du livrable remis après un Audit Flash : résumé exécutif des cinq priorités, feuille de route sur 30, 90 et 180 jours, et annexe cyberassurance d’une page.</p>
+          <p class="exemple-action">
+            <!-- À FOURNIR : exemple-rapport-audit-flash.pdf (remplacer le texte ci-dessous par <a class="bouton" href="/exemple-rapport-audit-flash.pdf">Consulter l’exemple de rapport (PDF)</a> une fois le fichier PDF anonymisé déposé) -->
+            Exemple anonymisé d’Audit Flash disponible sur simple demande à <a href="mailto:daouda.sow@pouloti.com">daouda.sow@pouloti.com</a>.
+          </p>
+        </div>
       </div>
-      <aside class="fiche carte-coton" aria-label="Fiche de l’entreprise">
+      <aside class="fiche carte-coton" aria-label="Parcours et coordonnées">
+        <div class="portrait-bloc">
+          <!-- À FOURNIR : photo (remplacer portrait-placeholder.svg par votre photo professionnelle locale, ex. /photo-daouda-sow.jpg) -->
+          <img class="portrait-photo" src="/portrait-placeholder.svg" alt="Daouda Sow" width="72" height="72">
+          <div class="portrait-identite">
+            <strong>Daouda Sow</strong>
+            <span>Poulo TI · Lévis (Québec)</span>
+          </div>
+        </div>
         <dl>
-          <div class="fiche-rang"><dt>Entreprise</dt><dd>Poulo TI</dd></div>
-          <div class="fiche-rang"><dt>Intervention</dt><dd>À distance et sur site</dd></div>
-          <div class="fiche-rang"><dt>Téléphone</dt><dd>418 814-2001</dd></div>
-          <div class="fiche-rang"><dt>Courriel</dt><dd>daouda.sow@pouloti.com</dd></div>
+          <div class="fiche-rang"><dt>Distinction</dt><dd>1er prix — Cyberhack 2025 (UQAR)</dd></div>
+          <div class="fiche-rang"><dt>Formation</dt><dd>DEC en Techniques de l’informatique</dd></div>
+          <div class="fiche-rang"><dt>Intervention</dt><dd>Lévis (Québec) — à distance et sur place (Québec et Chaudière-Appalaches)</dd></div>
+          <div class="fiche-rang"><dt>Téléphone</dt><dd><a href="tel:+14188142001">418 814-2001</a></dd></div>
+          <div class="fiche-rang"><dt>Courriel</dt><dd><a href="mailto:daouda.sow@pouloti.com">daouda.sow@pouloti.com</a></dd></div>
+          <div class="fiche-rang">
+            <dt>LinkedIn</dt>
+            <dd>
+              <!-- À FOURNIR : URL LinkedIn (remplacer le texte ci-dessous par <a href="https://www.linkedin.com/in/VOTRE-PROFIL">Profil LinkedIn</a>) -->
+              Daouda Sow
+            </dd>
+          </div>
         </dl>
       </aside>
     </div>
