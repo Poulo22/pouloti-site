@@ -140,9 +140,12 @@ section+section{border-top:1px solid var(--filet)}
 .portrait-identite strong{display:block;font-family:var(--titres);font-weight:500;font-size:20px;color:var(--encre)}
 .portrait-identite span{display:block;font-size:14px;color:var(--texteDoux)}
 .exemple-rapport{margin-top:32px;padding:28px 32px}
-.exemple-rapport h3{font-size:22px;margin-bottom:8px}
+.exemple-entete{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.exemple-rapport h3{font-size:22px;margin:0}
+.badge-fictif{font-size:12px;color:var(--accent);border:1px solid var(--filet);padding:2px 8px;border-radius:var(--rayon-carte);letter-spacing:.02em}
 .exemple-rapport p{font-size:15px;color:var(--texteDoux);margin-top:8px;max-width:56ch}
-.exemple-rapport .exemple-action{margin-top:16px;font-size:14px;color:var(--encre)}
+.exemple-rapport .exemple-action{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:16px;font-size:14px;color:var(--encre)}
+.mention-fictif{font-size:13px;color:var(--texteDoux)}
 
 /* Contact : carte lettre sur coton */
 .contact-grille{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:32px;align-items:start}
