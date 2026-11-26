@@ -41,7 +41,7 @@
     }
 
     var urlAction = (form.getAttribute('action') || '').trim();
-    if (!urlAction || urlAction.indexOf('VOTRE_ID_FORMSPREE') !== -1) {
+    if (!urlAction) {
       afficherErreurEnvoi();
       return;
     }
