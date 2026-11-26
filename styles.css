@@ -382,6 +382,7 @@ section{padding:88px 0}
 /* Offres : Registre d'honoraires avec mise en valeur de l'offre d'entrée */
 .offres-index{display:flex;flex-direction:column;gap:20px}
 .offre-ligne{
+  position:relative;
   display:grid;
   grid-template-columns:56px minmax(0,1fr) minmax(0,1.35fr);
   gap:24px 36px;
@@ -390,9 +391,21 @@ section{padding:88px 0}
   border:1px solid var(--carte-bord);
   border-radius:var(--rayon-carte);
   align-items:start;
-  transition:border-color var(--duree-courte) var(--courbe),box-shadow var(--duree-courte) var(--courbe);
+  transition:transform var(--duree-courte) var(--courbe),border-color var(--duree-courte) var(--courbe),box-shadow var(--duree-courte) var(--courbe),background-color var(--duree-courte) var(--courbe);
 }
-.offre-ligne:hover{border-color:var(--filet-fort);box-shadow:var(--ombre-fine)}
+.offre-ligne:not(.offre-vedette)::after{
+  content:"";
+  position:absolute;
+  left:-1px;
+  top:-1px;
+  bottom:-1px;
+  width:4px;
+  background:var(--marine);
+  border-radius:var(--rayon-carte) 0 0 var(--rayon-carte);
+  transform:scaleY(0);
+  transform-origin:top center;
+  transition:transform 240ms var(--courbe);
+}
 .offre-ligne.offre-vedette{
   background:linear-gradient(165deg,#FFFFFF 0%,var(--papier) 100%);
   border-color:var(--marine);
@@ -746,6 +759,89 @@ html.js-actif .reveler.visible{opacity:1;transform:none}
   .portrait-bloc{flex-direction:column;align-items:flex-start;gap:14px}
   .fiche-rang{grid-template-columns:1fr;gap:3px}
   .boutons .bouton{width:100%}
+}
+
+/* Micro-interactions tactiles au survol (uniquement sur écrans avec pointeur souris) */
+@media (hover:hover) and (pointer:fine){
+  /* 1. Spécimen de dossier & carte exemple de rapport */
+  .specimen,.exemple-rapport{
+    transition:transform 240ms var(--courbe),box-shadow 240ms var(--courbe),border-color 240ms var(--courbe);
+  }
+  .specimen:hover,.exemple-rapport:hover{
+    transform:translateY(-3px);
+    box-shadow:0 2px 4px rgba(30,24,19,.06),0 18px 40px -14px rgba(28,43,58,.20),0 34px 68px -28px rgba(28,43,58,.24);
+  }
+  .axe-item{
+    padding:4px 6px;
+    margin:-4px -6px;
+    border-radius:3px;
+    transition:background-color var(--duree-courte) var(--courbe),transform var(--duree-courte) var(--courbe);
+  }
+  .axe-item:hover{
+    background:var(--papier);
+    transform:translateX(3px);
+  }
+
+  /* 2. Lignes des 3 forfaits */
+  .offre-num{transition:color var(--duree-courte) var(--courbe),transform var(--duree-courte) var(--courbe)}
+  .offre-ligne:hover{
+    transform:translateY(-2px);
+    border-color:var(--filet-fort);
+    background:var(--papier);
+    box-shadow:var(--ombre-carte);
+  }
+  .offre-ligne.offre-vedette:hover{
+    border-color:var(--marine);
+    box-shadow:0 2px 4px rgba(30,24,19,.06),0 18px 40px -12px rgba(28,43,58,.22);
+  }
+  .offre-ligne:not(.offre-vedette):hover::after{transform:scaleY(1)}
+  .offre-ligne:hover .offre-num{color:var(--marine);transform:translateX(2px)}
+
+  /* 3. Puces technologiques */
+  .puce-tech{
+    transition:background-color 180ms var(--courbe),color 180ms var(--courbe),border-color 180ms var(--courbe),transform 180ms var(--courbe);
+  }
+  .puce-tech:hover{
+    background:var(--marine);
+    color:var(--sur-sombre);
+    border-color:var(--marine);
+    transform:translateY(-1px);
+  }
+
+  /* 4. Chronologie des 5 étapes & garanties */
+  .etapes li{
+    padding-left:14px;
+    padding-right:14px;
+    margin:0 -14px;
+    border-radius:var(--rayon-carte);
+    transition:background-color 200ms var(--courbe);
+  }
+  .etapes h3,.etape-duree{transition:transform 200ms var(--courbe),border-color 200ms var(--courbe),color 200ms var(--courbe)}
+  .etapes li:hover{background:rgba(250,248,244,.82)}
+  .etapes li:hover h3{transform:translateX(4px);color:var(--marine)}
+  .etapes li:hover .etape-duree{border-color:var(--marine)}
+
+  .engagement{
+    padding-top:12px;
+    border-top:1px solid rgba(250,248,244,.14);
+    transition:border-color 220ms var(--courbe),transform 220ms var(--courbe);
+  }
+  .engagement:hover{
+    border-top-color:#7EB2D6;
+    transform:translateY(-2px);
+  }
+
+  /* 5. Fiche profil et coordonnées directes */
+  .fiche-rang{
+    padding-left:8px;
+    padding-right:8px;
+    margin:0 -8px;
+    border-radius:3px;
+    transition:background-color 180ms var(--courbe);
+  }
+  .fiche-rang:hover{background:var(--ivoire)}
+  .contact-direct{transition:border-color 200ms var(--courbe),box-shadow 200ms var(--courbe)}
+  .contact-direct:hover{border-color:var(--filet-fort);box-shadow:var(--ombre-fine)}
 }
 
 @media (prefers-reduced-motion:reduce){
