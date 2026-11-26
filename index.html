@@ -76,7 +76,21 @@
 <body>
 <a class="saut" href="#contenu">Aller au contenu</a>
 
-<header class="haut">
+<div class="bandeau-haut">
+  <div class="conteneur">
+    <div class="bandeau-points">
+      <span class="bandeau-point">Lévis, Québec et Chaudière-Appalaches</span>
+      <span class="bandeau-point">Audit 100 % en lecture seule</span>
+      <span class="bandeau-point">Loi 25 et cyberassurance</span>
+    </div>
+    <div class="bandeau-contact">
+      <a href="tel:+14188142001">418 814-2001</a>
+      <a href="mailto:daouda.sow@pouloti.com">daouda.sow@pouloti.com</a>
+    </div>
+  </div>
+</div>
+
+<header class="haut" id="entete">
   <div class="conteneur">
     <a class="marque" href="/">
       <svg class="marque-sceau" viewBox="0 0 64 64" aria-hidden="true">
@@ -85,17 +99,29 @@
         <path d="M32 13 L47 18.5 V31.5 C47 41.2 40.6 48.8 32 52 C23.4 48.8 17 41.2 17 31.5 V18.5 Z" fill="var(--accent)" fill-opacity="0.45" stroke="var(--papier)" stroke-width="1.2" stroke-opacity="0.55"/>
         <path d="M23.5 21 H34.2 C38.8 21 41.8 23.5 41.8 27.6 C41.8 31.8 38.6 34.4 33.8 34.4 H28.8 V42.5 H31.6 V44.5 H22.5 V42.5 H24.8 V23 H22.5 V21 Z M28.8 23.3 V32.1 H33.3 C36.3 32.1 37.8 30.5 37.8 27.6 C37.8 24.8 36.3 23.3 33.4 23.3 Z" fill="var(--papier)"/>
       </svg>
-      <span>Poulo TI</span>
+      <span class="marque-texte">
+        <span class="marque-nom">Poulo TI</span>
+        <span class="marque-sous">Sécurité Microsoft 365 &amp; Intune</span>
+      </span>
     </a>
-    <nav aria-label="Navigation principale">
-      <ul>
-        <li><a href="#offres">Forfaits sécurité</a></li>
-        <li><a href="#services-ti">Services TI</a></li>
-        <li><a href="#deroulement">Démarche</a></li>
-        <li><a href="#a-propos">À propos</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+
+    <button class="menu-bouton" id="menu-bouton" type="button" aria-expanded="false" aria-controls="nav-zone">
+      <span>Menu</span>
+      <span class="menu-icone" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+
+    <div class="nav-zone" id="nav-zone">
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="#offres">Forfaits sécurité</a></li>
+          <li><a href="#services-ti">Services TI</a></li>
+          <li><a href="#deroulement">Démarche</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="bouton bouton-primaire bouton-compact nav-cta" href="#contact">Audit Flash</a>
+    </div>
   </div>
 </header>
 
@@ -105,21 +131,40 @@
   <div class="promesse">
     <div class="conteneur hero-grille">
       <div>
-        <p class="lieu">Lévis (Québec) · Sécurité Microsoft 365, Intune et automatisation pour PME et cabinets</p>
+        <p class="surtitre">PME et cabinets professionnels de 10 à 75 employés</p>
         <h1>Votre Microsoft 365, prêt pour l’assureur.</h1>
         <p class="sous">Du diagnostic de sécurité à prix fixe (Loi 25 et cyberassurance) jusqu’au durcissement Microsoft 365, à la gestion des postes Windows avec Intune et à l’automatisation.</p>
         <div class="boutons">
-          <a class="bouton" href="#contact">Demander un Audit Flash</a>
-          <a class="lien-secondaire" href="#services-ti">Découvrir mes services</a>
+          <a class="bouton bouton-primaire" href="#contact">
+            <span>Demander un Audit Flash</span>
+            <svg class="bouton-fleche" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+          </a>
+          <a class="bouton bouton-secondaire" href="#services-ti">Découvrir mes services</a>
+        </div>
+        <div class="hero-reperes">
+          <div class="repere"><strong>1 500 $</strong><span>Forfait d’entrée fixe, sans surprise</span></div>
+          <div class="repere"><strong>5 jours ouvrables</strong><span>Délai de remise du rapport complet</span></div>
+          <div class="repere"><strong>Lecture seule</strong><span>Aucun impact sur vos opérations</span></div>
         </div>
       </div>
-      <aside class="specimen carte-coton" aria-label="Engagements">
-        <div class="specimen-tete">
+
+      <aside class="specimen carte-coton carte-coton-double" aria-label="Engagements">
+        <div class="specimen-ruban">
+          <span class="specimen-code">Dossier de direction · M365</span>
+          <span class="tampon-lecture">Lecture seule</span>
+        </div>
+        <div class="specimen-titre">
           <strong>Offre d’entrée : Audit Flash</strong>
-          <span>PME et cabinets de 10 à 75 employés</span>
+          <span>10 à 75 employés</span>
+        </div>
+        <div class="specimen-axes" aria-label="Périmètre technique vérifié">
+          <div class="axe-item"><span class="axe-puce" aria-hidden="true"></span><span>Entra ID &amp; MFA</span></div>
+          <div class="axe-item"><span class="axe-puce" aria-hidden="true"></span><span>Exchange &amp; DMARC</span></div>
+          <div class="axe-item"><span class="axe-puce" aria-hidden="true"></span><span>Intune &amp; BitLocker</span></div>
+          <div class="axe-item"><span class="axe-puce" aria-hidden="true"></span><span>SharePoint &amp; Loi 25</span></div>
         </div>
         <ul class="garanties">
-          <li><strong>Prix fixe et transparent</strong><span>Convenu avant de commencer. Aucune facturation à l’heure qui dérape.</span></li>
+          <li><strong>Prix fixe et transparent</strong><span>Convenu par écrit avant de commencer. Aucune facturation à l’heure qui dérape.</span></li>
           <li><strong>Lecture seule pendant l’audit</strong><span>L’évaluation ne modifie rien dans votre environnement Microsoft 365.</span></li>
           <li><strong>Des preuves, pas des promesses</strong><span>Chaque constat s’appuie sur un fichier de preuve vérifiable que vous conservez.</span></li>
         </ul>
@@ -128,15 +173,18 @@
   </div>
 
   <!-- Offres -->
-  <section id="offres" aria-labelledby="titre-offres">
+  <section id="offres" class="surface-papier" aria-labelledby="titre-offres">
     <div class="conteneur">
-      <div class="section-tete">
-        <h2 id="titre-offres">Trois offres, trois prix</h2>
+      <div class="section-tete reveler">
+        <div>
+          <p class="surtitre">Honoraires clairs</p>
+          <h2 id="titre-offres">Trois offres, trois prix</h2>
+        </div>
         <p class="intro">Je commence toujours par l’Audit Flash : il dit précisément où vous en êtes. Je ne propose la suite que si l’audit montre qu’elle est utile.</p>
       </div>
       <div class="offres-index">
 
-        <article class="offre-ligne">
+        <article class="offre-ligne offre-vedette reveler">
           <div class="offre-num" aria-hidden="true">01</div>
           <div class="offre-meta">
             <span class="offre-mention">Point de départ · Audit sécurité Microsoft 365 · PME Québec</span>
@@ -144,6 +192,9 @@
             <p class="prix">1 500 $</p>
             <p class="taxes">Prix fixe, taxes en sus</p>
             <p class="offre-pour">Rapport remis en 5 jours ouvrables après l’accès au compte d’audit, aligné sur les mesures techniques de la Loi 25 et de la cyberassurance.</p>
+            <p class="offre-cta">
+              <a class="bouton bouton-primaire bouton-compact" href="#contact" data-choisir-besoin="Audit Flash et conformité">Choisir l’Audit Flash</a>
+            </p>
           </div>
           <div class="offre-detail">
             <ul>
@@ -156,7 +207,7 @@
           </div>
         </article>
 
-        <article class="offre-ligne">
+        <article class="offre-ligne reveler">
           <div class="offre-num" aria-hidden="true">02</div>
           <div class="offre-meta">
             <span class="offre-mention">Mise aux normes · Audit sécurité Microsoft 365 · PME Québec</span>
@@ -164,6 +215,9 @@
             <p class="prix"><small>à partir de</small> 5 500 $</p>
             <p class="taxes">Prix fixe établi après l’audit, taxes en sus</p>
             <p class="offre-pour">Le prix exact dépend du nombre d’employés et de l’état de départ. Il est fixé par écrit avant le début des travaux.</p>
+            <p class="offre-cta">
+              <a class="bouton bouton-secondaire bouton-compact" href="#contact" data-choisir-besoin="Durcissement Microsoft 365">Demander ce forfait</a>
+            </p>
           </div>
           <div class="offre-detail">
             <ul>
@@ -175,7 +229,7 @@
           </div>
         </article>
 
-        <article class="offre-ligne">
+        <article class="offre-ligne reveler">
           <div class="offre-num" aria-hidden="true">03</div>
           <div class="offre-meta">
             <span class="offre-mention">Maintien continu · Audit sécurité Microsoft 365 · PME Québec</span>
@@ -183,6 +237,9 @@
             <p class="prix"><small>à partir de</small> 600 $<small> / mois</small></p>
             <p class="taxes">Taxes en sus, sans engagement à long terme</p>
             <p class="offre-pour">Pour garder le niveau atteint, mois après mois, face aux exigences de la Loi 25 et de votre cyberassurance.</p>
+            <p class="offre-cta">
+              <a class="bouton bouton-secondaire bouton-compact" href="#contact" data-choisir-besoin="Autre besoin">S’informer sur le suivi</a>
+            </p>
           </div>
           <div class="offre-detail">
             <ul>
@@ -200,20 +257,30 @@
   </section>
 
   <!-- Services TI ciblés -->
-  <section id="services-ti" aria-labelledby="titre-services-ti">
+  <section id="services-ti" class="surface-pierre" aria-labelledby="titre-services-ti">
     <div class="conteneur">
-      <div class="section-tete">
-        <h2 id="titre-services-ti">Services TI spécialisés</h2>
+      <div class="section-tete reveler">
+        <div>
+          <p class="surtitre">Cœur de compétence</p>
+          <h2 id="titre-services-ti">Services TI spécialisés</h2>
+        </div>
         <p class="intro">Au-delà de l’audit initial, j’interviens sur mon cœur de métier : la sécurité de Microsoft 365, la gestion des postes Windows avec Intune et l’automatisation.</p>
       </div>
-      <div class="offres-index">
+      <div class="services-grille">
 
-        <article class="offre-ligne">
-          <div class="offre-num" aria-hidden="true">A</div>
-          <div class="offre-meta">
+        <article class="dossier-service reveler">
+          <div class="dossier-entete">
             <span class="offre-mention">Identités, courriel &amp; Defender</span>
-            <h3>Sécurité Microsoft 365</h3>
-            <p class="offre-pour">Durcissement des accès, de la messagerie et du partage de fichiers.</p>
+            <span class="dossier-lettre" aria-hidden="true">A</span>
+          </div>
+          <h3>Sécurité Microsoft 365</h3>
+          <p class="dossier-resume">Durcissement des accès, de la messagerie et du partage de fichiers.</p>
+          <div class="puces-tech" aria-label="Technologies maîtrisées">
+            <span class="puce-tech">Entra ID</span>
+            <span class="puce-tech">MFA &amp; Accès conditionnel</span>
+            <span class="puce-tech">Microsoft Defender</span>
+            <span class="puce-tech">SPF · DKIM · DMARC</span>
+            <span class="puce-tech">SharePoint &amp; Teams</span>
           </div>
           <div class="offre-detail">
             <ul>
@@ -225,12 +292,19 @@
           </div>
         </article>
 
-        <article class="offre-ligne">
-          <div class="offre-num" aria-hidden="true">B</div>
-          <div class="offre-meta">
+        <article class="dossier-service reveler">
+          <div class="dossier-entete">
             <span class="offre-mention">Intune, packaging &amp; scripts</span>
-            <h3>Postes et applications</h3>
-            <p class="offre-pour">Standardisation des postes Windows et automatisation de l’administration.</p>
+            <span class="dossier-lettre" aria-hidden="true">B</span>
+          </div>
+          <h3>Postes et applications</h3>
+          <p class="dossier-resume">Standardisation des postes Windows et automatisation de l’administration.</p>
+          <div class="puces-tech" aria-label="Outils de gestion et d’automatisation">
+            <span class="puce-tech">Microsoft Intune</span>
+            <span class="puce-tech">BitLocker</span>
+            <span class="puce-tech">PSADT &amp; Win32</span>
+            <span class="puce-tech">PowerShell</span>
+            <span class="puce-tech">Microsoft Graph</span>
           </div>
           <div class="offre-detail">
             <ul>
@@ -246,33 +320,52 @@
   </section>
 
   <!-- Déroulement -->
-  <section id="deroulement" aria-labelledby="titre-deroulement">
+  <section id="deroulement" class="surface-ivoire" aria-labelledby="titre-deroulement">
     <div class="conteneur">
-      <div class="section-tete">
-        <h2 id="titre-deroulement">Comment se passe l’audit</h2>
+      <div class="section-tete reveler">
+        <div>
+          <p class="surtitre">Méthodologie encadrée</p>
+          <h2 id="titre-deroulement">Comment se passe l’audit</h2>
+        </div>
         <p class="intro">Vous gardez le contrôle du début à la fin. Rien n’est modifié dans votre environnement pendant l’audit.</p>
       </div>
-      <ol class="etapes">
-        <li><h3>Un mandat écrit</h3><p>Je vous soumets une lettre de mandat qui précise ce qui est vérifié, le prix et la durée de conservation des données. Rien ne commence sans votre accord signé.</p></li>
-        <li><h3>Un compte d’audit dédié, en lecture seule</h3><p>Vous créez un compte réservé à l’audit dans votre Microsoft 365, avec des droits de lecture seulement. Je ne peux rien modifier, rien supprimer, rien envoyer.</p></li>
-        <li><h3>La collecte</h3><p>J’effectue les vérifications à distance, sans installer de logiciel sur vos postes et sans interrompre le travail de vos équipes. Durée : environ 2 heures.</p></li>
-        <li><h3>La remise du rapport</h3><p>Je présente le rapport à la direction en personne ou en visioconférence, et je remets les fichiers par un lien de partage chiffré qui expire : jamais par courriel.</p></li>
-        <li><h3>La fermeture</h3><p>Vous supprimez le compte d’audit à la fin du mandat et retirez l’accès accordé à l’outil d’audit. Je supprime les données recueillies après 30 jours suivant la remise finale.</p></li>
+      <ol class="etapes reveler">
+        <li>
+          <div class="etape-titre"><h3>Un mandat écrit</h3><span class="etape-duree">Avant le démarrage</span></div>
+          <p>Je vous soumets une lettre de mandat qui précise ce qui est vérifié, le prix et la durée de conservation des données. Rien ne commence sans votre accord signé.</p>
+        </li>
+        <li>
+          <div class="etape-titre"><h3>Un compte d’audit dédié, en lecture seule</h3><span class="etape-duree">10 minutes</span></div>
+          <p>Vous créez un compte réservé à l’audit dans votre Microsoft 365, avec des droits de lecture seulement. Je ne peux rien modifier, rien supprimer, rien envoyer.</p>
+        </li>
+        <li>
+          <div class="etape-titre"><h3>La collecte</h3><span class="etape-duree">Environ 2 heures</span></div>
+          <p>J’effectue les vérifications à distance, sans installer de logiciel sur vos postes et sans interrompre le travail de vos équipes.</p>
+        </li>
+        <li>
+          <div class="etape-titre"><h3>La remise du rapport</h3><span class="etape-duree">Sous 5 jours ouvrables</span></div>
+          <p>Je présente le rapport à la direction en personne ou en visioconférence, et je remets les fichiers par un lien de partage chiffré qui expire : jamais par courriel.</p>
+        </li>
+        <li>
+          <div class="etape-titre"><h3>La fermeture</h3><span class="etape-duree">Fin du mandat + 30 j</span></div>
+          <p>Vous supprimez le compte d’audit à la fin du mandat et retirez l’accès accordé à l’outil d’audit. Je supprime les données recueillies après 30 jours suivant la remise finale.</p>
+        </li>
       </ol>
-      <div class="engagements">
-        <div class="engagement"><strong>Lecture seule</strong><span>Aucune modification pendant l’audit.</span></div>
-        <div class="engagement"><strong>Compte supprimé à la fin</strong><span>L’accès disparaît avec le mandat.</span></div>
+      <div class="bandeau-garanties reveler">
+        <div class="engagement"><strong>Lecture seule</strong><span>Aucune modification dans votre tenant pendant toute la durée de l’audit.</span></div>
+        <div class="engagement"><strong>Compte supprimé à la fin</strong><span>L’accès temporaire disparaît dès la remise du livrable final.</span></div>
         <div class="engagement"><strong>Rien par courriel</strong><span>Les données de votre organisation ne transitent jamais par une boîte courriel.</span></div>
       </div>
     </div>
   </section>
 
   <!-- À propos -->
-  <section id="a-propos" aria-labelledby="titre-a-propos">
+  <section id="a-propos" class="surface-papier" aria-labelledby="titre-a-propos">
     <div class="conteneur a-propos">
-      <div class="a-propos-texte">
+      <div class="a-propos-texte reveler">
+        <p class="surtitre">Interlocuteur unique</p>
         <h2 id="titre-a-propos">À propos</h2>
-        <p class="lettrine">Daouda Sow. Spécialisé en sécurité Microsoft 365, gestion des postes Windows avec Intune et automatisation PowerShell, j’accompagne les PME et les cabinets professionnels dans la sécurisation de leurs accès, de leur messagerie et de leurs appareils.</p>
+        <p class="chapo-propos"><strong>Daouda Sow.</strong> Spécialisé en sécurité Microsoft 365, gestion des postes Windows avec Intune et automatisation PowerShell, j’accompagne les PME et les cabinets professionnels dans la sécurisation de leurs accès, de leur messagerie et de leurs appareils.</p>
         <p>Les organisations de 10 à 75 employés doivent aujourd’hui répondre aux exigences de la Loi 25 et des questionnaires de cyberassurance tout en gardant un parc Windows propre et conforme, souvent sans disposer d’un spécialiste Microsoft 365 à l’interne.</p>
         <p>Ma façon de travailler est directe : un seul interlocuteur, du diagnostic à la mise en œuvre, des preuves vérifiables sans jargon inutile, et un tarif convenu d’avance.</p>
 
@@ -283,21 +376,25 @@
           </div>
           <p>Consultez un spécimen complet du livrable remis après un Audit Flash (établi sur une organisation simulée, « Cabinet Démo CPA — Exemple fictif ») : résumé exécutif des cinq priorités, feuille de route sur 30, 90 et 180 jours, et tableau cyberassurance.</p>
           <p class="exemple-action">
-            <a class="bouton" href="/exemple-rapport-audit-flash.pdf" target="_blank" rel="noopener">Consulter l’exemple de rapport (PDF)</a>
+            <a class="bouton bouton-secondaire" href="/exemple-rapport-audit-flash.pdf" target="_blank" rel="noopener">
+              <span>Consulter l’exemple de rapport (PDF)</span>
+              <svg class="bouton-fleche" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 15L15 5M8 5h7v7"/></svg>
+            </a>
             <span class="mention-fictif">Exemple fictif — aucune donnée d’un client réel</span>
           </p>
         </div>
       </div>
-      <aside class="fiche carte-coton" aria-label="Parcours et coordonnées">
+
+      <aside class="fiche carte-coton carte-coton-double reveler" aria-label="Parcours et coordonnées">
         <div class="portrait-bloc">
-          <img class="portrait-photo" src="/photo-daouda-sow.jpg" alt="Daouda Sow" width="88" height="88" loading="lazy" decoding="async">
+          <img class="portrait-photo" src="/photo-daouda-sow.jpg" alt="Daouda Sow" width="104" height="104" loading="lazy" decoding="async">
           <div class="portrait-identite">
             <strong>Daouda Sow</strong>
             <span>Poulo TI · Lévis (Québec)</span>
           </div>
         </div>
+        <div class="distinction-encart">Distinction · 1er prix — Cyberhack 2025 (UQAR)</div>
         <dl>
-          <div class="fiche-rang"><dt>Distinction</dt><dd>1er prix — Cyberhack 2025 (UQAR)</dd></div>
           <div class="fiche-rang"><dt>Formation</dt><dd>DEC en Techniques de l’informatique</dd></div>
           <div class="fiche-rang"><dt>Intervention</dt><dd>Lévis (Québec) — à distance et sur place (Québec et Chaudière-Appalaches)</dd></div>
           <div class="fiche-rang"><dt>Téléphone</dt><dd><a href="tel:+14188142001">418 814-2001</a></dd></div>
@@ -312,13 +409,20 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" aria-labelledby="titre-contact">
+  <section id="contact" class="surface-pierre" aria-labelledby="titre-contact">
     <div class="conteneur contact-grille">
-      <div>
+      <div class="reveler">
+        <p class="surtitre">Prise de contact directe</p>
         <h2 id="titre-contact">Parler d’un besoin ou demander un Audit Flash</h2>
         <p class="intro intro-contact">Remplissez ces champs pour m’envoyer directement votre demande. Je vous réponds personnellement sous 1 jour ouvrable.</p>
+        <div class="contact-direct">
+          <p><strong>Courriel direct :</strong> <a href="mailto:daouda.sow@pouloti.com">daouda.sow@pouloti.com</a></p>
+          <p><strong>Téléphone :</strong> <a href="tel:+14188142001">418 814-2001</a></p>
+          <p>Premier échange exploratoire de 15 minutes sans frais.</p>
+        </div>
       </div>
-      <form class="carte-coton" id="formulaire" action="https://formspree.io/f/moedrpbb" method="POST">
+
+      <form class="carte-coton reveler" id="formulaire" action="https://formspree.io/f/moedrpbb" method="POST">
         <div class="champ-pot" aria-hidden="true">
           <label for="site_web">Ne pas remplir ce champ</label>
           <input id="site_web" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
@@ -326,48 +430,60 @@
         <div class="champs">
           <div class="champ">
             <label for="nom">Nom</label>
-            <input id="nom" name="Nom" type="text" autocomplete="name" required>
+            <input id="nom" name="Nom" type="text" autocomplete="name" placeholder="Votre prénom et nom" required>
           </div>
           <div class="champ">
             <label for="organisation">Organisation</label>
-            <input id="organisation" name="Organisation" type="text" autocomplete="organization" required>
+            <input id="organisation" name="Organisation" type="text" autocomplete="organization" placeholder="Nom de votre PME ou cabinet" required>
           </div>
           <div class="champ">
-            <label for="courriel">Courriel</label>
-            <input id="courriel" name="Courriel" type="email" autocomplete="email" required>
+            <label for="courriel">Courriel professionnel</label>
+            <input id="courriel" name="Courriel" type="email" autocomplete="email" placeholder="prenom@organisation.ca" required>
           </div>
           <div class="champ">
             <label for="employes">Nombre d’employés</label>
-            <select id="employes" name="Employes" required>
-              <option value="">Choisir…</option>
-              <option>Moins de 10</option>
-              <option>10 à 25</option>
-              <option>26 à 50</option>
-              <option>51 à 75</option>
-              <option>Plus de 75</option>
-            </select>
+            <div class="select-cadre">
+              <select id="employes" name="Employes" required>
+                <option value="">Choisir…</option>
+                <option>Moins de 10</option>
+                <option>10 à 25</option>
+                <option>26 à 50</option>
+                <option>51 à 75</option>
+                <option>Plus de 75</option>
+              </select>
+              <svg class="select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
           </div>
           <div class="champ champ-large">
             <label for="besoin">Besoin principal</label>
-            <select id="besoin" name="Besoin">
-              <option>Audit Flash et conformité</option>
-              <option>Durcissement Microsoft 365</option>
-              <option>Gestion des postes avec Intune</option>
-              <option>Déploiement d’applications / automatisation</option>
-              <option>Autre besoin</option>
-            </select>
+            <div class="select-cadre">
+              <select id="besoin" name="Besoin">
+                <option>Audit Flash et conformité</option>
+                <option>Durcissement Microsoft 365</option>
+                <option>Gestion des postes avec Intune</option>
+                <option>Déploiement d’applications / automatisation</option>
+                <option>Autre besoin</option>
+              </select>
+              <svg class="select-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
           </div>
         </div>
         <p class="aide">N’incluez aucune information sur vos clients ni aucun détail de configuration TI. Consultez ma <a href="/confidentialite.html">politique de confidentialité</a>.</p>
-        <p class="action-form"><button class="bouton" id="bouton-envoi" type="submit">Envoyer ma demande</button></p>
+        <p class="action-form">
+          <button class="bouton bouton-primaire" id="bouton-envoi" type="submit">
+            <span>Envoyer ma demande</span>
+            <svg class="bouton-fleche" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+          </button>
+        </p>
         <p class="message" id="message" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
 
   <!-- Renseignements personnels -->
-  <section id="confidentialite" aria-labelledby="titre-confidentialite">
+  <section id="confidentialite" class="surface-ivoire" aria-labelledby="titre-confidentialite">
     <div class="conteneur">
+      <p class="surtitre">Transparence Loi 25</p>
       <h2 id="titre-confidentialite">Protection des renseignements personnels</h2>
       <ul class="confidentialite-liste">
         <li>Ce site ne dépose aucun témoin (cookie), n’utilise aucun outil de mesure d’audience ni aucun traceur, et héberge localement ses polices et ses icônes.</li>
@@ -384,12 +500,13 @@
 <footer>
   <div class="conteneur">
     <div>
-      <p>© 2026 Poulo TI</p>
+      <div class="pied-marque">Poulo TI</div>
+      <p>© 2026 Poulo TI — Daouda Sow</p>
       <p>Lévis (Québec) — services à distance et sur place dans la région de Québec et Chaudière-Appalaches</p>
     </div>
     <div class="pied-droit">
       <p>Cybersécurité Microsoft 365, Intune et automatisation</p>
-      <p><a href="/confidentialite.html">Confidentialité</a> · Pas un avis juridique</p>
+      <p><a href="/confidentialite.html">Confidentialité</a> · <a href="https://www.linkedin.com/in/daouda-sow-ab02a1171" rel="noopener noreferrer">LinkedIn</a> · Pas un avis juridique</p>
     </div>
   </div>
 </footer>

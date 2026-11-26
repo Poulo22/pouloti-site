@@ -19,7 +19,7 @@
 <body>
 <a class="saut" href="#contenu">Aller au contenu</a>
 
-<header class="haut">
+<header class="haut" id="entete">
   <div class="conteneur">
     <a class="marque" href="/">
       <svg class="marque-sceau" viewBox="0 0 64 64" aria-hidden="true">
@@ -28,24 +28,36 @@
         <path d="M32 13 L47 18.5 V31.5 C47 41.2 40.6 48.8 32 52 C23.4 48.8 17 41.2 17 31.5 V18.5 Z" fill="var(--accent)" fill-opacity="0.45" stroke="var(--papier)" stroke-width="1.2" stroke-opacity="0.55"/>
         <path d="M23.5 21 H34.2 C38.8 21 41.8 23.5 41.8 27.6 C41.8 31.8 38.6 34.4 33.8 34.4 H28.8 V42.5 H31.6 V44.5 H22.5 V42.5 H24.8 V23 H22.5 V21 Z M28.8 23.3 V32.1 H33.3 C36.3 32.1 37.8 30.5 37.8 27.6 C37.8 24.8 36.3 23.3 33.4 23.3 Z" fill="var(--papier)"/>
       </svg>
-      <span>Poulo TI</span>
+      <span class="marque-texte">
+        <span class="marque-nom">Poulo TI</span>
+        <span class="marque-sous">Sécurité Microsoft 365 &amp; Intune</span>
+      </span>
     </a>
-    <nav aria-label="Navigation principale">
-      <ul>
-        <li><a href="/#offres">Forfaits sécurité</a></li>
-        <li><a href="/#services-ti">Services TI</a></li>
-        <li><a href="/#deroulement">Démarche</a></li>
-        <li><a href="/#a-propos">À propos</a></li>
-        <li><a href="/#contact">Contact</a></li>
-      </ul>
-    </nav>
+
+    <button class="menu-bouton" id="menu-bouton" type="button" aria-expanded="false" aria-controls="nav-zone">
+      <span>Menu</span>
+      <span class="menu-icone" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+
+    <div class="nav-zone" id="nav-zone">
+      <nav aria-label="Navigation principale">
+        <ul>
+          <li><a href="/#offres">Forfaits sécurité</a></li>
+          <li><a href="/#services-ti">Services TI</a></li>
+          <li><a href="/#deroulement">Démarche</a></li>
+          <li><a href="/#a-propos">À propos</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="bouton bouton-primaire bouton-compact nav-cta" href="/#contact">Audit Flash</a>
+    </div>
   </div>
 </header>
 
 <main id="contenu">
-  <section class="page-interne" aria-labelledby="titre-page-confidentialite">
+  <section class="page-interne surface-papier" aria-labelledby="titre-page-confidentialite">
     <div class="conteneur">
-      <p class="lieu">Loi sur la protection des renseignements personnels dans le secteur privé (Loi 25)</p>
+      <p class="surtitre">Loi sur la protection des renseignements personnels dans le secteur privé (Loi 25)</p>
       <h1 id="titre-page-confidentialite" class="titre-page">Protection des renseignements personnels</h1>
       <ul class="confidentialite-liste">
         <li>Ce site ne dépose aucun témoin (cookie), n’utilise aucun outil de mesure d’audience ni aucun traceur, et héberge localement ses polices et ses icônes.</li>
@@ -54,7 +66,7 @@
         <li>Ils sont conservés le temps de traiter votre demande (maximum 12 mois), puis supprimés.</li>
         <li>Responsable de la protection des renseignements personnels : Daouda Sow (<a href="mailto:daouda.sow@pouloti.com">daouda.sow@pouloti.com</a>). Vous pouvez demander l’accès à vos renseignements, leur rectification ou leur suppression en tout temps.</li>
       </ul>
-      <p class="retour-accueil"><a class="bouton" href="/">Retour à l’accueil</a></p>
+      <p class="retour-accueil"><a class="bouton bouton-secondaire" href="/">Retour à l’accueil</a></p>
     </div>
   </section>
 </main>
@@ -62,14 +74,16 @@
 <footer>
   <div class="conteneur">
     <div>
-      <p>© 2026 Poulo TI</p>
+      <div class="pied-marque">Poulo TI</div>
+      <p>© 2026 Poulo TI — Daouda Sow</p>
       <p>Lévis (Québec) — services à distance et sur place dans la région de Québec et Chaudière-Appalaches</p>
     </div>
     <div class="pied-droit">
       <p>Cybersécurité Microsoft 365, Intune et automatisation</p>
-      <p><a href="/confidentialite.html">Confidentialité</a> · Pas un avis juridique</p>
+      <p><a href="/confidentialite.html">Confidentialité</a> · <a href="https://www.linkedin.com/in/daouda-sow-ab02a1171" rel="noopener noreferrer">LinkedIn</a> · Pas un avis juridique</p>
     </div>
   </div>
 </footer>
+<script src="/app.js" defer></script>
 </body>
 </html>
