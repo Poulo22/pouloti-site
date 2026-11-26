@@ -135,8 +135,8 @@ section+section{border-top:1px solid var(--filet)}
 .fiche-rang{display:grid;grid-template-columns:128px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--filet)}
 .fiche dt{color:var(--texteDoux);font-size:14px}
 .fiche dd{margin:0;font-size:15px;color:var(--encre)}
-.portrait-bloc{display:flex;align-items:center;gap:16px;padding-bottom:20px;margin-bottom:4px}
-.portrait-photo{width:72px;height:72px;border-radius:var(--rayon-carte);object-fit:cover;display:block;flex-shrink:0}
+.portrait-bloc{display:flex;align-items:center;gap:18px;padding-bottom:20px;margin-bottom:4px}
+.portrait-photo{width:88px;height:88px;border-radius:var(--rayon-carte);border:1px solid var(--carte-bord);object-fit:cover;display:block;flex-shrink:0}
 .portrait-identite strong{display:block;font-family:var(--titres);font-weight:500;font-size:20px;color:var(--encre)}
 .portrait-identite span{display:block;font-size:14px;color:var(--texteDoux)}
 .exemple-rapport{margin-top:32px;padding:28px 32px}
