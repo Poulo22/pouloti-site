@@ -679,27 +679,7 @@ input,select{
   width:100%;
   transition:border-color var(--duree-courte) var(--courbe),box-shadow var(--duree-courte) var(--courbe);
 }
-.select-cadre{position:relative;display:block}
-.select-cadre select{
-  -webkit-appearance:none;
-  -moz-appearance:none;
-  appearance:none;
-  background-image:none;
-  padding-right:40px;
-  cursor:pointer;
-}
-.select-cadre select::-ms-expand{display:none}
-.select-chevron{
-  position:absolute;
-  right:14px;
-  top:50%;
-  transform:translateY(-50%);
-  width:15px;
-  height:15px;
-  fill:none;
-  color:var(--marine);
-  pointer-events:none;
-}
+select{cursor:pointer}
 input:hover,select:hover{border-color:var(--encre)}
 input:focus,select:focus{outline:none;border-color:var(--marine);box-shadow:var(--ombre-focus)}
 input:disabled,select:disabled{opacity:.55;cursor:not-allowed}
