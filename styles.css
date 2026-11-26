@@ -696,6 +696,7 @@ input,select{
   transform:translateY(-50%);
   width:15px;
   height:15px;
+  fill:none;
   color:var(--marine);
   pointer-events:none;
 }
