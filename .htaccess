@@ -1,3 +1,6 @@
+# Interdiction du listage des répertoires (ex. /fonts/)
+Options -Indexes
+
 # Redirection 301 HTTP -> HTTPS et www.pouloti.com -> pouloti.com (OVHcloud Apache)
 <IfModule mod_rewrite.c>
     RewriteEngine On

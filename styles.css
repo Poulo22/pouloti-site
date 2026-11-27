@@ -290,6 +290,11 @@ nav a:hover::after,nav a[data-actif="true"]::after{transform:scaleX(1)}
   max-width:48ch;
   margin:22px 0 32px;
 }
+.hero-sous-traitance{
+  margin-top:16px;
+  font-size:14.5px;
+  color:var(--texteDoux);
+}
 .hero-reperes{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -529,6 +534,7 @@ section{padding:88px 0}
   border-radius:3px;
 }
 .dossier-service .offre-detail{flex:1}
+#firmes-ti{grid-column:1 / -1}
 
 /* Démarche : chronologie connectée + Bandeau Ardoise Nuit */
 .etapes{
